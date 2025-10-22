@@ -3,9 +3,11 @@
 """
 Created on Sun Oct 12 21:08:59 2025
 
-Inspecting the trained model
+Script to inspect relation of trained
+surrogate model misfit to the model parameter ranges.
+Visualized with pairs of model parameters.
 
-@author: jon
+@author: Jonathan Bedford, Tectonic Geodesy, Ruhr University Bochum, DE
 """
 
 

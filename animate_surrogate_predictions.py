@@ -3,10 +3,9 @@
 """
 Created on Fri Sep 19 17:31:51 2025
 
-Moving a fault through the model space and predicting
-slip
+Script to animate the trained surrogate model.
 
-@author: jon
+@author: Jonathan Bedford, Tectonic Geodesy, Ruhr University Bochum, DE
 """
 
 

@@ -3,10 +3,9 @@
 """
 Created on Fri Oct 10 15:43:33 2025
 
-Finding multiple faults from the summed displacement field fo known synthetic
-faults.
+Script to run the blind source separation.
 
-@author: jon
+@author: Jonathan Bedford, Tectonic Geodesy, Ruhr University Bochum, DE
 """
 ## import "standard" things
 import numpy as np
