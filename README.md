@@ -1,4 +1,3 @@
-[![DOI](https://zenodo.org/badge/1080547006.svg)](https://zenodo.org/badge/latestdoi/1080547006)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-red.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
 # Invertible Surrogate Elastic Dislocations
@@ -10,7 +9,7 @@ The paper associated with this repository is currently submitted and under revie
 ### What this repository contains:
 This repository contains a minimal example to reproduce the results presented in the paper.
 
-> Due to the size of the `.mat`-file with the synthetic data we provide the synthetic samples in a `sciebo`-folder [here](). If you want to use these data, download and place the `.mat`-file in the `./synthetic_training_data_generation/` folder. However, you can (and are encouraged to) generate the sythetic samples yourself using the script mentioned below. 
+> Due to the size of the `.mat`-file with the synthetic data we provide the synthetic samples in a `sciebo`-folder [here](https://ruhr-uni-bochum.sciebo.de/s/8mby8egNcFy9nmr). If you want to use these data, download and place the `.mat`-file in the `./synthetic_training_data_generation/` folder. However, you can (and are encouraged to) generate the sythetic samples yourself using the script mentioned below. 
 
 We run this code in a conda environment which can be replicated `environment.yml`.  We do not recommend recreating this environment, rather we share it to show you which versions of packages we have used. 
 
