@@ -744,6 +744,16 @@ def do_multi_fault_inv_sne_best(G,y,nn_models,options):
                       y[:,None])
     return A_prior
 
+def do_pearson(Y_b,Y_r):
+    Y_true_flat = Y_r.ravel()
+    Y_true_centered = Y_true_flat - Y_true_flat.mean()
+    Y_b_means = Y_b.mean(axis=1, keepdims=True)
+    numerator = np.dot(Y_b - Y_b_means, Y_true_centered)
+    denominator = np.linalg.norm(Y_b - Y_b_means, axis=1) * np.linalg.norm(Y_true_centered)
+    pearson_corr = numerator / denominator
+    
+    return pearson_corr
+    
 
 def gen_BFs(n_xyz,n_sdr,mag_wl,model,Y_true,model_path):
     xy_spac = np.linspace(-1+1e-2,1-1e-2,n_xyz+2)[1:-1]
@@ -780,8 +790,9 @@ def gen_BFs(n_xyz,n_sdr,mag_wl,model,Y_true,model_path):
         np.savez(file=fname,Y_bfs=Y_bfs)
     
     ## doing correlation coefficient
-    corco = np.dot(Y_bfs, Y_true.ravel())/\
-        (np.linalg.norm(Y_bfs, axis=1) * np.linalg.norm(Y_true.ravel()))
+    # corco = np.dot(Y_bfs, Y_true.ravel())/\
+    #     (np.linalg.norm(Y_bfs, axis=1) * np.linalg.norm(Y_true.ravel()))
+    corco = do_pearson(Y_bfs,Y_true)
     
     ## returning the best initial model as measured by correlation
     ii = np.arange(corco.size)[corco==np.max(corco)][0] # could think about doing "abs" values
@@ -840,8 +851,9 @@ def finer_search_loop(n_sdr,n_wl,model,Y_true):
         Y_bfs = np.array([j.ravel() for j in Y_bfs])
         
         ## calculating cross correlation
-        corco = np.dot(Y_bfs, Y_true.ravel())/\
-            (np.linalg.norm(Y_bfs, axis=1) * np.linalg.norm(Y_true.ravel()))
+        # corco = np.dot(Y_bfs, Y_true.ravel())/\
+        #     (np.linalg.norm(Y_bfs, axis=1) * np.linalg.norm(Y_true.ravel()))
+        corco = do_pearson(Y_bfs,Y_true)
         corco = np.abs(corco)
         
         ## Getting best cross correlation
@@ -1032,8 +1044,9 @@ def gen_BFs_xyz_sdr_wl_chunked(n_xyz,n_sdr,n_wl,model,model_path):
 
 def get_corco(Y_bfs,Y_true):
     ## doing correlation coefficient
-    corco = np.dot(Y_bfs, Y_true.ravel())/\
-        (np.linalg.norm(Y_bfs, axis=1) * np.linalg.norm(Y_true.ravel()))
+    # corco = np.dot(Y_bfs, Y_true.ravel())/\
+    #     (np.linalg.norm(Y_bfs, axis=1) * np.linalg.norm(Y_true.ravel()))
+    corco = do_pearson(Y_bfs,Y_true)
     
     return corco
 
@@ -1073,8 +1086,9 @@ def gen_BFs_smarter(n_xyz,n_sdr,mag_wl,model,Y_true,model_path):
         np.savez(file=fname,Y_bfs=Y_bfs)
     
     ## doing correlation coefficient
-    corco = np.dot(Y_bfs, Y_true.ravel())/\
-        (np.linalg.norm(Y_bfs, axis=1) * np.linalg.norm(Y_true.ravel()))
+    # corco = np.dot(Y_bfs, Y_true.ravel())/\
+    #     (np.linalg.norm(Y_bfs, axis=1) * np.linalg.norm(Y_true.ravel()))
+    corco = do_pearson(Y_bfs,Y_true)
     corco = np.abs(corco)
     
     
