@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/1080547006.svg)](https://doi.org/10.5281/zenodo.17431710)
 [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-red.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
 # Invertible Surrogate Elastic Dislocations
