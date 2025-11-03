@@ -7,7 +7,7 @@ The paper associated with this repository is currently submitted and under revie
 
 > Jonathan Bedford and Kaan Çökerim. *Finding Multiple Faults with Invertible Surrogates and Blind Source Separation* (2025)
 >
-> Preprint openly availiable on _ESS Open Archive_ : [10.22541/essoar.176169629.93316933/v1](10.22541/essoar.176169629.93316933/v1)
+> Preprint openly availiable on _ESS Open Archive_ : [https://doi.org/10.22541/essoar.176169629.93316933/v1](https://doi.org/10.22541/essoar.176169629.93316933/v1)
 
 ### What this repository contains:
 This repository contains a minimal example to reproduce the results presented in the paper.
